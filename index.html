@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aisha Mart - Fresh, Affordable, and Reliable Online Shopping">
+    <title>Aisha Mart - Fresh. Affordable. Reliable.</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-image">
+                    <img src="Yellow and Black Simple Market Creative Logo.png" alt="Aisha Mart Logo" class="logo-img">
+                </div>
+                <span class="logo-text">Aisha Mart</span>
+            </a>
+            
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search for products...">
+                <button class="search-btn">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <circle cx="9" cy="9" r="6" stroke="white" stroke-width="2"/>
+                        <path d="M14 14L18 18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="nav-links">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="products.html" class="nav-link">Shop</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="cart-btn-modern" id="cartBtn">
+                    <svg class="cart-icon" width="28" height="28" viewBox="0 0 24 24" fill="none">
+                        <path d="M9 2L7 5H3C2.45 5 2 5.45 2 6V19C2 19.55 2.45 20 3 20H21C21.55 20 22 19.55 22 19V6C22 5.45 21.55 5 21 5H17L15 2H9Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        <circle cx="9" cy="12" r="1" fill="currentColor"/>
+                        <circle cx="15" cy="12" r="1" fill="currentColor"/>
+                    </svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                    <span class="cart-label">Cart</span>
+                </button>
+                <button class="icon-btn" id="userBtn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                        <path d="M6 21C6 17.5 8.5 15 12 15C15.5 15 18 17.5 18 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Promotional Banners -->
+    <section class="promo-banners">
+        <div class="container">
+            <div class="promo-banners-grid">
+                <div class="promo-banner-card">
+                    <div class="promo-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="promo-text">
+                        <h3>New Arrivals</h3>
+                        <p>Fresh products every week</p>
+                    </div>
+                </div>
+                <div class="promo-banner-card">
+                    <div class="promo-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                            <path d="M18 18.5C18.83 18.5 19.5 19.17 19.5 20C19.5 20.83 18.83 21.5 18 21.5C17.17 21.5 16.5 20.83 16.5 20C16.5 19.17 17.17 18.5 18 18.5ZM1 2H4.27L5.21 4H20C20.55 4 21 4.45 21 5C21 5.17 20.95 5.34 20.88 5.5L17.3 11.97C16.96 12.58 16.3 13 15.55 13H8.1L7.2 14.63L7.17 14.75C7.17 14.89 7.28 15 7.42 15H19V17H7C5.9 17 5 16.1 5 15C5 14.65 5.09 14.32 5.24 14.04L6.6 11.59L3 4H1V2ZM7 18.5C7.83 18.5 8.5 19.17 8.5 20C8.5 20.83 7.83 21.5 7 21.5C6.17 21.5 5.5 20.83 5.5 20C5.5 19.17 6.17 18.5 7 18.5ZM16 11L18.78 6H6.14L8.5 11H16Z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="promo-text">
+                        <h3>Free Delivery</h3>
+                        <p>On orders above KSh 2,000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="hero-circle hero-circle-1"></div>
+            <div class="hero-circle hero-circle-2"></div>
+            <div class="hero-circle hero-circle-3"></div>
+        </div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="hero-badge">Welcome to Aisha Mart</span>
+                <h1 class="hero-title">
+                    Fresh. Affordable.<br>
+                    <span class="gradient-text">Reliable.</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Your one-stop destination for quality groceries, fashion, electronics, and household essentials delivered right to your doorstep.
+                </p>
+                <div class="hero-cta">
+                    <a href="products.html" class="btn btn-primary">Shop Now</a>
+                    <a href="#categories" class="btn btn-secondary">Explore Categories</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <h3>10,000+</h3>
+                        <p>Products</p>
+                    </div>
+                    <div class="stat">
+                        <h3>50,000+</h3>
+                        <p>Happy Customers</p>
+                    </div>
+                    <div class="stat">
+                        <h3>24/7</h3>
+                        <p>Support</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-placeholder">
+                    <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=600&h=600&fit=crop" alt="Shopping" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 400%22%3E%3Crect fill=%22%23f5f5f5%22 width=%22400%22 height=%22400%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2240%22 fill=%22%231B5E20%22%3EShopping%3C/text%3E%3C/svg%3E'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Shop by Category</h2>
+                <p class="section-subtitle">Explore our wide range of products</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card" data-category="groceries">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=400&h=300&fit=crop" alt="Groceries" onerror="this.parentElement.innerHTML='<div class=\'category-fallback\'>🛒</div>'">
+                    </div>
+                    <div class="category-content">
+                        <h3>Groceries</h3>
+                        <p>Fresh produce & essentials</p>
+                        <span class="category-count">2,500+ items</span>
+                    </div>
+                </div>
+                <div class="category-card" data-category="fashion">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=400&h=300&fit=crop" alt="Fashion" onerror="this.parentElement.innerHTML='<div class=\'category-fallback\'>👕</div>'">
+                    </div>
+                    <div class="category-content">
+                        <h3>Fashion</h3>
+                        <p>Trending styles for everyone</p>
+                        <span class="category-count">3,200+ items</span>
+                    </div>
+                </div>
+                <div class="category-card" data-category="electronics">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=400&h=300&fit=crop" alt="Electronics" onerror="this.parentElement.innerHTML='<div class=\'category-fallback\'>📱</div>'">
+                    </div>
+                    <div class="category-content">
+                        <h3>Electronics</h3>
+                        <p>Latest tech gadgets</p>
+                        <span class="category-count">1,800+ items</span>
+                    </div>
+                </div>
+                <div class="category-card" data-category="household">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=400&h=300&fit=crop" alt="Household" onerror="this.parentElement.innerHTML='<div class=\'category-fallback\'>🏠</div>'">
+                    </div>
+                    <div class="category-content">
+                        <h3>Household</h3>
+                        <p>Everything for your home</p>
+                        <span class="category-count">2,100+ items</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Products</h2>
+                <p class="section-subtitle">Handpicked just for you</p>
+                <div class="section-divider"></div>
+            </div>
+            <div class="products-grid" id="featuredProducts">
+                <!-- Products will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotional Banner -->
+    <section class="promo-banner">
+        <div class="container">
+            <div class="promo-content">
+                <div class="promo-badge">Limited Time Offer</div>
+                <h2>Summer Sale is Here!</h2>
+                <p>Get up to 50% off on selected items. Don't miss out on these amazing deals!</p>
+                <a href="products.html?sale=true" class="btn btn-white">Shop Sale</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-subtitle">Real reviews from real people</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-text">"Aisha Mart has completely transformed my shopping experience. Fresh products, great prices, and lightning-fast delivery!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://thumbs.dreamstime.com/b/young-african-muslim-woman-against-chroma-key-green-background-studio-shot-wearing-traditional-clothing-116792717.jpg" alt="Maryan Warsame" class="author-avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="author-avatar" style="display: none;">S</div>
+                        <div>
+                            <h4>Sarah Johnson</h4>
+                            <span>Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-text">"The quality of products is exceptional and the customer service is top-notch. Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXC-Tq-zk_4_fvFo6mpv0NDNjIQIiy3lmlhg&s" alt="Mohammed Ali" class="author-avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="author-avatar" style="display: none;">M</div>
+                        <div>
+                            <h4>Mohammed Ali</h4>
+                            <span>Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-text">"I love the variety and convenience. Aisha Mart is now my go-to for all my shopping needs!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://www.shutterstock.com/image-photo/beautiful-arab-middleeastern-woman-traditional-260nw-2310426511.jpg" alt="Fatima Hassan" class="author-avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="author-avatar" style="display: none;">F</div>
+                        <div>
+                            <h4>Fatima Hassan</h4>
+                            <span>Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated with Our Latest Offers</h2>
+                <p>Subscribe to our newsletter and never miss a deal!</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-col-brand">
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                <circle cx="20" cy="20" r="18" fill="#1B5E20"/>
+                                <path d="M20 8L28 16H24V26H16V16H12L20 8Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <span>Aisha Mart</span>
+                    </div>
+                    <p class="footer-text">Your trusted partner for quality products and exceptional service.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Twitter</a>
+                        <a href="#" class="social-link">Instagram</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Shop</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Track Order</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li>Email: info@Aishamart.com</li>
+                        <li>Phone: +2 (547) 221-44347</li>
+                        <li>Address: 154 Backroad St, Nairobi</li>
+                        <li>Hours: 24/7 Online</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Aisha Mart. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-btn" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be loaded dynamically -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-summary">
+                <div class="cart-summary-row">
+                    <span>Subtotal:</span>
+                    <span id="cartSubtotal">KSh 0</span>
+                </div>
+                <div class="cart-summary-row">
+                    <span>Delivery:</span>
+                    <span id="cartDelivery">KSh 200</span>
+                </div>
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotal">KSh 0</span>
+                </div>
+            </div>
+            <a href="checkout.html" class="btn btn-primary btn-block">Proceed to Checkout</a>
+            <a href="products.html" class="btn btn-secondary btn-block" style="margin-top: 0.5rem;">Continue Shopping</a>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <script src="js/app.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>

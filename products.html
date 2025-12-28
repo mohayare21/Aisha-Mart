@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse all products at Aisha Mart">
+    <title>Shop All Products - Aisha Mart</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        .products-page {
+            padding: 2rem 0 4rem;
+            background: var(--soft-gray);
+        }
+        
+        .products-header {
+            background: var(--pure-white);
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .products-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            gap: 0.5rem;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb a {
+            color: var(--primary-green);
+        }
+        
+        .products-content {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: var(--spacing-lg);
+        }
+        
+        .filters-sidebar {
+            background: var(--pure-white);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+        
+        .filter-section {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .filter-section h3 {
+            font-size: 1rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-dark);
+        }
+        
+        .filter-option {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            padding: 0.5rem 0;
+            cursor: pointer;
+        }
+        
+        .filter-option input[type="checkbox"],
+        .filter-option input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        
+        .filter-option label {
+            cursor: pointer;
+            flex: 1;
+        }
+        
+        .price-inputs {
+            display: flex;
+            gap: var(--spacing-xs);
+            align-items: center;
+        }
+        
+        .price-inputs input {
+            flex: 1;
+            padding: 0.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+        }
+        
+        .filter-btn {
+            width: 100%;
+            margin-top: var(--spacing-sm);
+        }
+        
+        .products-main {
+            background: var(--pure-white);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+        }
+        
+        .products-toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-lg);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .results-count {
+            color: var(--text-gray);
+        }
+        
+        .sort-select {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            background: var(--pure-white);
+            cursor: pointer;
+        }
+        
+        @media (max-width: 1024px) {
+            .products-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .filters-sidebar {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation (same as homepage) -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <circle cx="20" cy="20" r="18" fill="#1B5E20"/>
+                    <path d="M20 8L28 16H24V26H16V16H12L20 8Z" fill="white"/>
+                </svg>
+                <span>Aisha Mart</span>
+            </div>
+            
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search for products...">
+                <button class="search-btn">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <circle cx="9" cy="9" r="6" stroke="white" stroke-width="2"/>
+                        <path d="M14 14L18 18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="products.html" class="nav-link active">Shop</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="icon-btn" id="cartBtn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M9 2L7 5H3C2.45 5 2 5.45 2 6V19C2 19.55 2.45 20 3 20H21C21.55 20 22 19.55 22 19V6C22 5.45 21.55 5 21 5H17L15 2H9Z" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span class="badge" id="cartCount">0</span>
+                </button>
+                <button class="icon-btn" id="userBtn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                        <path d="M6 21C6 17.5 8.5 15 12 15C15.5 15 18 17.5 18 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Products Header -->
+    <div class="products-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Shop</span>
+            </div>
+            <h1>All Products</h1>
+        </div>
+    </div>
+
+    <!-- Products Content -->
+    <section class="products-page">
+        <div class="container">
+            <div class="products-content">
+                <!-- Filters Sidebar -->
+                <aside class="filters-sidebar">
+                    <div class="filter-section">
+                        <h3>Categories</h3>
+                        <div class="filter-option">
+                            <input type="radio" name="category" id="all" value="" checked>
+                            <label for="all">All Products</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="radio" name="category" id="groceries" value="groceries">
+                            <label for="groceries">Groceries</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="radio" name="category" id="fashion" value="fashion">
+                            <label for="fashion">Fashion</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="radio" name="category" id="electronics" value="electronics">
+                            <label for="electronics">Electronics</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="radio" name="category" id="household" value="household">
+                            <label for="household">Household</label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h3>Price Range</h3>
+                        <div class="price-inputs">
+                            <input type="number" id="minPrice" placeholder="Min" min="0">
+                            <span>-</span>
+                            <input type="number" id="maxPrice" placeholder="Max" min="0">
+                        </div>
+                        <button class="btn btn-primary filter-btn" onclick="applyFilters()">Apply</button>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h3>Rating</h3>
+                        <div class="filter-option">
+                            <input type="checkbox" id="rating5" value="5">
+                            <label for="rating5">★★★★★ & up</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="rating4" value="4">
+                            <label for="rating4">★★★★☆ & up</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="rating3" value="3">
+                            <label for="rating3">★★★☆☆ & up</label>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-secondary" style="width: 100%; margin-top: 1rem;" onclick="clearFilters()">Clear Filters</button>
+                </aside>
+
+                <!-- Products Main -->
+                <main class="products-main">
+                    <div class="products-toolbar">
+                        <span class="results-count" id="resultsCount">Showing all products</span>
+                        <select class="sort-select" id="sortSelect" onchange="applySorting()">
+                            <option value="">Sort by</option>
+                            <option value="popular">Most Popular</option>
+                            <option value="rating">Highest Rated</option>
+                            <option value="price-asc">Price: Low to High</option>
+                            <option value="price-desc">Price: High to Low</option>
+                        </select>
+                    </div>
+                    
+                    <div class="products-grid" id="allProducts">
+                        <!-- Products will be loaded here -->
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-btn" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <a href="checkout.html" class="btn btn-primary btn-block">Checkout</a>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <script src="js/app.js"></script>
+    <script src="js/products.js"></script>
+    <script>
+        function applyFilters() {
+            const category = document.querySelector('input[name="category"]:checked').value;
+            const minPrice = parseFloat(document.getElementById('minPrice').value) || undefined;
+            const maxPrice = parseFloat(document.getElementById('maxPrice').value) || undefined;
+            const sort = document.getElementById('sortSelect').value;
+            
+            const filters = {
+                category: category || undefined,
+                minPrice,
+                maxPrice,
+                sort: sort || undefined
+            };
+            
+            const products = filterProducts(filters);
+            document.getElementById('resultsCount').textContent = 
+                `Showing ${products.length} product${products.length !== 1 ? 's' : ''}`;
+            
+            loadAllProducts(filters);
+        }
+        
+        function applySorting() {
+            applyFilters();
+        }
+        
+        function clearFilters() {
+            document.getElementById('all').checked = true;
+            document.getElementById('minPrice').value = '';
+            document.getElementById('maxPrice').value = '';
+            document.getElementById('sortSelect').value = '';
+            document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+            loadAllProducts();
+            document.getElementById('resultsCount').textContent = 'Showing all products';
+        }
+        
+        // Add event listeners to category radios
+        document.querySelectorAll('input[name="category"]').forEach(radio => {
+            radio.addEventListener('change', applyFilters);
+        });
+    </script>
+</body>
+</html>

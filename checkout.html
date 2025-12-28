@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Aisha Mart</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        .checkout-page {
+            padding: 3rem 0;
+            background: var(--soft-gray);
+            min-height: 100vh;
+        }
+        
+        .checkout-container {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: var(--spacing-xl);
+        }
+        
+        .checkout-section {
+            background: var(--pure-white);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-lg);
+            color: var(--text-dark);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        .order-summary {
+            position: sticky;
+            top: 100px;
+        }
+        
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: var(--spacing-sm) 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            padding: var(--spacing-md) 0;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-green);
+        }
+        
+        .checkout-btn {
+            width: 100%;
+            margin-top: var(--spacing-md);
+            font-size: 1.1rem;
+            padding: 1rem;
+        }
+        
+        @media (max-width: 1024px) {
+            .checkout-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .order-summary {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <circle cx="20" cy="20" r="18" fill="#1B5E20"/>
+                    <path d="M20 8L28 16H24V26H16V16H12L20 8Z" fill="white"/>
+                </svg>
+                <span>Aisha Mart</span>
+            </div>
+            <div style="flex: 1;"></div>
+            <div class="nav-actions">
+                <button class="icon-btn" id="userBtn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                        <path d="M6 21C6 17.5 8.5 15 12 15C15.5 15 18 17.5 18 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="checkout-page">
+        <div class="container">
+            <h1 style="margin-bottom: 2rem; font-size: 2.5rem;">Checkout</h1>
+            
+            <div class="checkout-container">
+                <div>
+                    <!-- Shipping Information -->
+                    <div class="checkout-section">
+                        <h2 class="section-title">Shipping Information</h2>
+                        <form id="checkoutForm">
+                            <div class="form-group">
+                                <label class="form-label">Full Name</label>
+                                <input type="text" class="form-input" id="fullName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-input" id="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Phone Number</label>
+                                <input type="tel" class="form-input" id="phone" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Address</label>
+                                <input type="text" class="form-input" id="address" required>
+                            </div>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <div class="form-group">
+                                    <label class="form-label">City</label>
+                                    <input type="text" class="form-input" id="city" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">Postal Code</label>
+                                    <input type="text" class="form-input" id="postalCode" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Country</label>
+                                <input type="text" class="form-input" id="country" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Additional Notes (Optional)</label>
+                                <textarea class="form-input" id="notes" rows="3"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- Payment Method -->
+                    <div class="checkout-section" style="margin-top: 1.5rem;">
+                        <h2 class="section-title">Payment Method</h2>
+                        <div style="display: grid; gap: 1rem;">
+                            <div class="filter-option" style="padding: 1rem; background: var(--soft-gray); border-radius: var(--radius-md);">
+                                <input type="radio" name="payment" id="cod" value="cod" checked>
+                                <label for="cod" style="font-weight: 600;">Cash on Delivery</label>
+                            </div>
+                            <div class="filter-option" style="padding: 1rem; background: var(--soft-gray); border-radius: var(--radius-md);">
+                                <input type="radio" name="payment" id="card" value="card">
+                                <label for="card" style="font-weight: 600;">Credit/Debit Card</label>
+                            </div>
+                            <div class="filter-option" style="padding: 1rem; background: var(--soft-gray); border-radius: var(--radius-md);">
+                                <input type="radio" name="payment" id="wallet" value="wallet">
+                                <label for="wallet" style="font-weight: 600;">Digital Wallet</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Order Summary -->
+                <div class="checkout-section order-summary">
+                    <h2 class="section-title">Order Summary</h2>
+                    <div id="orderItems"></div>
+                    <div style="margin-top: 1.5rem;">
+                        <div class="summary-item">
+                            <span>Subtotal</span>
+                            <span id="subtotal">$0.00</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Shipping</span>
+                            <span id="shipping">$5.00</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Tax (10%)</span>
+                            <span id="tax">$0.00</span>
+                        </div>
+                        <div class="summary-total">
+                            <span>Total</span>
+                            <span id="total">$0.00</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary checkout-btn" onclick="placeOrder()">
+                        Place Order
+                    </button>
+                    <a href="products.html" class="btn btn-secondary" style="width: 100%; margin-top: 0.5rem; text-align: center;">
+                        Continue Shopping
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        // Require login for checkout
+        if (typeof authModule !== 'undefined') {
+            if (!authModule.requireLogin()) {
+                // Will redirect to login if not authenticated
+            } else {
+                // User is logged in, proceed with checkout
+                const user = authModule.getCurrentUser();
+                if (user) {
+                    // Pre-fill form with user details
+                    document.getElementById('fullName').value = user.name;
+                    document.getElementById('email').value = user.email;
+                }
+            }
+        }
+        
+        function loadOrderSummary() {
+            const cart = JSON.parse(localStorage.getItem('aishamart_cart')) || [];
+            const orderItems = document.getElementById('orderItems');
+            
+            if (cart.length === 0) {
+                orderItems.innerHTML = '<p style="text-align: center; color: var(--text-gray);">Your cart is empty</p>';
+                return;
+            }
+            
+            orderItems.innerHTML = cart.map(item => `
+                <div class="summary-item">
+                    <div>
+                        <div style="font-weight: 600;">${item.name}</div>
+                        <div style="color: var(--text-gray); font-size: 0.9rem;">Qty: ${item.quantity}</div>
+                    </div>
+                    <span style="font-weight: 600;">$${(item.price * item.quantity).toFixed(2)}</span>
+                </div>
+            `).join('');
+            
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const shipping = 5.00;
+            const tax = subtotal * 0.1;
+            const total = subtotal + shipping + tax;
+            
+            document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
+            document.getElementById('tax').textContent = `$${tax.toFixed(2)}`;
+            document.getElementById('total').textContent = `$${total.toFixed(2)}`;
+        }
+        
+        function placeOrder() {
+            const form = document.getElementById('checkoutForm');
+            
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+            
+            const orderData = {
+                fullName: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                address: document.getElementById('address').value,
+                city: document.getElementById('city').value,
+                postalCode: document.getElementById('postalCode').value,
+                country: document.getElementById('country').value,
+                notes: document.getElementById('notes').value,
+                paymentMethod: document.querySelector('input[name="payment"]:checked').value,
+                items: JSON.parse(localStorage.getItem('aishamart_cart')) || [],
+                total: document.getElementById('total').textContent,
+                orderDate: new Date().toISOString()
+            };
+            
+            // Save order to localStorage (in production, this would be sent to your backend)
+            const orders = JSON.parse(localStorage.getItem('aishamart_orders')) || [];
+            orderData.orderId = 'ORD-' + Date.now();
+            orders.push(orderData);
+            localStorage.setItem('aishamart_orders', JSON.stringify(orders));
+            
+            // Clear cart
+            localStorage.setItem('aishamart_cart', JSON.stringify([]));
+            
+            // Show success message
+            alert('Order placed successfully! Order ID: ' + orderData.orderId);
+            window.location.href = 'index.html';
+        }
+        
+        loadOrderSummary();
+    </script>
+</body>
+</html>

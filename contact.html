@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Aisha Mart</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-image">
+                    <img src="/Yellow and Black Simple Market Creative Logo.png" alt="Aisha Mart Logo" class="logo-img">
+                </div>
+                <span class="logo-text">Aisha Mart</span>
+            </a>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Search for products...">
+                <button class="search-btn">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <circle cx="9" cy="9" r="6" stroke="white" stroke-width="2"/>
+                        <path d="M14 14L18 18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="products.html" class="nav-link">Shop</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="cart-btn-modern" id="cartBtn">
+                    <svg class="cart-icon" width="28" height="28" viewBox="0 0 24 24" fill="none">
+                        <path d="M9 2L7 5H3C2.45 5 2 5.45 2 6V19C2 19.55 2.45 20 3 20H21C21.55 20 22 19.55 22 19V6C22 5.45 21.55 5 21 5H17L15 2H9Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        <circle cx="9" cy="12" r="1" fill="currentColor"/>
+                        <circle cx="15" cy="12" r="1" fill="currentColor"/>
+                    </svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                    <span class="cart-label">Cart</span>
+                </button>
+                <button class="icon-btn" id="userBtn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                        <path d="M6 21C6 17.5 8.5 15 12 15C15.5 15 18 17.5 18 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1 class="contact-hero-title">Get in Touch</h1>
+            <p class="contact-hero-subtitle">We're here to help! Reach out to us anytime</p>
+            <div class="hero-divider"></div>
+        </div>
+    </section>
+
+    <!-- Contact Info Cards -->
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="contact-info-grid">
+                <div class="contact-info-card">
+                    <div class="contact-card-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                            <path d="M3 5C3 3.89543 3.89543 3 5 3H8.27924C8.70967 3 9.09181 3.27543 9.22792 3.68377L10.7257 8.17721C10.8831 8.64932 10.6694 9.16531 10.2243 9.38787L7.96701 10.5165C9.06925 12.9612 11.0388 14.9308 13.4835 16.033L14.6121 13.7757C14.8347 13.3306 15.3507 13.1169 15.8228 13.2743L20.3162 14.7721C20.7246 14.9082 21 15.2903 21 15.7208V19C21 20.1046 20.1046 21 19 21H18C9.71573 21 3 14.2843 3 6V5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Phone</h3>
+                    <p>Call us anytime</p>
+                    <a href="tel:+254700123456" class="contact-link">+254 700 123 456</a>
+                    <a href="tel:+254711987654" class="contact-link">+254 711 987 654</a>
+                </div>
+                
+                <div class="contact-info-card">
+                    <div class="contact-card-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                            <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
+                            <path d="M3 7L12 13L21 7" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Email</h3>
+                    <p>Send us a message</p>
+                    <a href="mailto:info@aishamart.com" class="contact-link">info@aishamart.com</a>
+                    <a href="mailto:support@aishamart.com" class="contact-link">support@aishamart.com</a>
+                </div>
+                
+                <div class="contact-info-card">
+                    <div class="contact-card-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2Z" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Location</h3>
+                    <p>Visit our office</p>
+                    <p class="contact-address">Nairobi, Kenya</p>
+                    <p class="contact-address">Open 24/7 Online</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Hours -->
+    <section class="support-hours-section">
+        <div class="container">
+            <div class="support-hours-card">
+                <div class="support-icon">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h2>Customer Support Hours</h2>
+                <div class="hours-grid">
+                    <div class="hours-item">
+                        <span class="day">Monday - Friday</span>
+                        <span class="time">8:00 AM - 8:00 PM</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="day">Saturday</span>
+                        <span class="time">9:00 AM - 6:00 PM</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="day">Sunday</span>
+                        <span class="time">10:00 AM - 4:00 PM</span>
+                    </div>
+                    <div class="hours-item highlight">
+                        <span class="day">Online Shopping</span>
+                        <span class="time">24/7 Available</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="contact-form-wrapper">
+                <div class="form-intro">
+                    <h2>Send Us a Message</h2>
+                    <p>Have a question, suggestion, or need help? Fill out the form below and we'll get back to you as soon as possible.</p>
+                </div>
+                
+                <form id="contactForm" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactName">Full Name *</label>
+                            <input type="text" id="contactName" name="name" placeholder="John Doe" required>
+                            <span class="form-error" id="contactNameError"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactEmail">Email Address *</label>
+                            <input type="email" id="contactEmail" name="email" placeholder="john@example.com" required>
+                            <span class="form-error" id="contactEmailError"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactPhone">Phone Number (Optional)</label>
+                        <input type="tel" id="contactPhone" name="phone" placeholder="+254 700 123 456">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactSubject">Subject *</label>
+                        <select id="contactSubject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="order">Order Status</option>
+                            <option value="product">Product Question</option>
+                            <option value="delivery">Delivery Issue</option>
+                            <option value="return">Return/Refund</option>
+                            <option value="complaint">Complaint</option>
+                            <option value="feedback">Feedback/Suggestion</option>
+                            <option value="partnership">Partnership Opportunity</option>
+                        </select>
+                        <span class="form-error" id="contactSubjectError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactMessage">Message *</label>
+                        <textarea id="contactMessage" name="message" rows="6" placeholder="Tell us how we can help you..." required></textarea>
+                        <span class="form-error" id="contactMessageError"></span>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="margin-right: 0.5rem;">
+                            <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                        Send Message
+                    </button>
+                </form>
+                
+                <div id="formSuccessMessage" class="form-success-message" style="display: none;">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="10" stroke="#43A047" stroke-width="2"/>
+                        <path d="M9 12L11 14L15 10" stroke="#43A047" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <h3>Message Sent Successfully!</h3>
+                    <p>Thank you for contacting us. We'll get back to you within 24 hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Support -->
+    <section class="whatsapp-section">
+        <div class="container">
+            <div class="whatsapp-card">
+                <div class="whatsapp-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                        <path d="M17.472 14.382C17.015 14.154 14.849 13.088 14.432 12.934C14.015 12.78 13.719 12.703 13.423 13.161C13.127 13.619 12.276 14.619 12.016 14.916C11.756 15.213 11.496 15.249 11.039 15.021C10.582 14.793 9.102 14.313 7.352 12.763C5.982 11.556 5.071 10.063 4.811 9.605C4.551 9.147 4.783 8.906 5.011 8.678C5.217 8.472 5.468 8.147 5.696 7.887C5.924 7.627 5.996 7.439 6.15 7.142C6.304 6.845 6.227 6.585 6.113 6.357C5.999 6.129 5.088 3.963 4.707 3.047C4.338 2.167 3.963 2.283 3.696 2.271C3.441 2.259 3.145 2.257 2.849 2.257C2.553 2.257 2.06 2.371 1.643 2.829C1.226 3.287 0.088 4.353 0.088 6.519C0.088 8.685 1.679 10.779 1.907 11.076C2.135 11.373 5.071 15.687 9.483 17.602C10.476 18.023 11.25 18.279 11.851 18.467C12.851 18.781 13.755 18.735 14.469 18.615C15.27 18.483 17.015 17.566 17.396 16.558C17.777 15.55 17.777 14.686 17.663 14.494C17.549 14.302 17.253 14.188 16.796 13.96L17.472 14.382ZM12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22Z" fill="currentColor"/>
+                    </svg>
+                </div>
+                <h3>Quick Support via WhatsApp</h3>
+                <p>Get instant help from our support team</p>
+                <a href="https://wa.me/254700123456" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M17.472 14.382C17.015 14.154 14.849 13.088 14.432 12.934C14.015 12.78 13.719 12.703 13.423 13.161C13.127 13.619 12.276 14.619 12.016 14.916C11.756 15.213 11.496 15.249 11.039 15.021C10.582 14.793 9.102 14.313 7.352 12.763C5.982 11.556 5.071 10.063 4.811 9.605C4.551 9.147 4.783 8.906 5.011 8.678C5.217 8.472 5.468 8.147 5.696 7.887C5.924 7.627 5.996 7.439 6.15 7.142C6.304 6.845 6.227 6.585 6.113 6.357C5.999 6.129 5.088 3.963 4.707 3.047C4.338 2.167 3.963 2.283 3.696 2.271C3.441 2.259 3.145 2.257 2.849 2.257C2.553 2.257 2.06 2.371 1.643 2.829C1.226 3.287 0.088 4.353 0.088 6.519C0.088 8.685 1.679 10.779 1.907 11.076C2.135 11.373 5.071 15.687 9.483 17.602C10.476 18.023 11.25 18.279 11.851 18.467C12.851 18.781 13.755 18.735 14.469 18.615C15.27 18.483 17.015 17.566 17.396 16.558C17.777 15.55 17.777 14.686 17.663 14.494C17.549 14.302 17.253 14.188 16.796 13.96L17.472 14.382ZM12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22Z" fill="white"/>
+                    </svg>
+                    Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media -->
+    <section class="social-media-section">
+        <div class="container">
+            <h2 class="section-title">Connect With Us</h2>
+            <p class="section-subtitle">Follow us on social media for updates and offers</p>
+            <div class="social-media-grid">
+                <a href="#" class="social-media-card facebook">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                        <path d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Facebook</span>
+                </a>
+                <a href="#" class="social-media-card twitter">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                        <path d="M23 3C22.0424 3.67548 20.9821 4.19211 19.86 4.53C19.2577 3.83751 18.4573 3.34669 17.567 3.12393C16.6767 2.90116 15.7395 2.95718 14.8821 3.28444C14.0247 3.6117 13.2884 4.19439 12.773 4.9537C12.2575 5.71302 11.9877 6.61234 12 7.53V8.53C10.2426 8.57555 8.50127 8.18546 6.93101 7.39533C5.36074 6.60519 4.01032 5.43763 3 4C3 4 -1 13 8 17C5.94053 18.398 3.48716 19.0989 1 19C10 24 21 19 21 7.5C20.9991 7.22145 20.9723 6.94359 20.92 6.67C21.9406 5.66349 22.6608 4.39271 23 3V3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Twitter</span>
+                </a>
+                <a href="#" class="social-media-card instagram">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                        <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
+                    </svg>
+                    <span>Instagram</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-col-brand">
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                <circle cx="20" cy="20" r="18" fill="#1B5E20"/>
+                                <path d="M20 8L28 16H24V26H16V16H12L20 8Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <span>Aisha Mart</span>
+                    </div>
+                    <p class="footer-text">Your trusted partner for quality products and exceptional service.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Twitter</a>
+                        <a href="#" class="social-link">Instagram</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Shop</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Track Order</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li>Email: info@aishamart.com</li>
+                        <li>Phone: +254 722 623 332</li>
+                        <li>Address: Nairobi, Kenya</li>
+                        <li>Hours: 24/7 Online</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Aisha Mart. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>

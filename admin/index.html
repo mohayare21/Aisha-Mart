@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Aisha Mart</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        .admin-layout {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            min-height: 100vh;
+            background: var(--soft-gray);
+        }
+        
+        .admin-sidebar {
+            background: var(--primary-green);
+            color: var(--pure-white);
+            padding: var(--spacing-lg);
+        }
+        
+        .admin-logo {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-xl);
+            padding-bottom: var(--spacing-lg);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .admin-nav {
+            list-style: none;
+        }
+        
+        .admin-nav-item {
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .admin-nav-link {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-sm) var(--spacing-md);
+            color: var(--pure-white);
+            border-radius: var(--radius-md);
+            transition: var(--transition-fast);
+        }
+        
+        .admin-nav-link:hover,
+        .admin-nav-link.active {
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .admin-main {
+            padding: var(--spacing-xl);
+        }
+        
+        .admin-header {
+            background: var(--pure-white);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .stat-card {
+            background: var(--pure-white);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-medium);
+        }
+        
+        .stat-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+        
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--light-green);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 0.25rem;
+        }
+        
+        .stat-label {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+        
+        .content-card {
+            background: var(--pure-white);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .table th {
+            text-align: left;
+            padding: var(--spacing-sm);
+            background: var(--soft-gray);
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        .table td {
+            padding: var(--spacing-sm);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .table tr:hover {
+            background: var(--soft-gray);
+        }
+        
+        .badge-status {
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .badge-pending {
+            background: #FFF3E0;
+            color: #F57C00;
+        }
+        
+        .badge-processing {
+            background: #E3F2FD;
+            color: #1976D2;
+        }
+        
+        .badge-completed {
+            background: #E8F5E9;
+            color: #388E3C;
+        }
+        
+        .action-btn {
+            padding: 0.4rem 0.8rem;
+            font-size: 0.85rem;
+            border-radius: var(--radius-sm);
+            margin-right: 0.25rem;
+        }
+        
+        @media (max-width: 1024px) {
+            .admin-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .admin-sidebar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="admin-logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <circle cx="20" cy="20" r="18" fill="white"/>
+                    <path d="M20 8L28 16H24V26H16V16H12L20 8Z" fill="#1B5E20"/>
+                </svg>
+                <span>Admin</span>
+            </div>
+            
+            <ul class="admin-nav">
+                <li class="admin-nav-item">
+                    <a href="index.html" class="admin-nav-link active">
+                        <span>📊</span>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="products.html" class="admin-nav-link">
+                        <span>📦</span>
+                        <span>Products</span>
+                    </a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="orders.html" class="admin-nav-link">
+                        <span>🛍️</span>
+                        <span>Orders</span>
+                    </a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="customers.html" class="admin-nav-link">
+                        <span>👥</span>
+                        <span>Customers</span>
+                    </a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="categories.html" class="admin-nav-link">
+                        <span>🏷️</span>
+                        <span>Categories</span>
+                    </a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="analytics.html" class="admin-nav-link">
+                        <span>📈</span>
+                        <span>Analytics</span>
+                    </a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="../index.html" class="admin-nav-link" style="margin-top: 2rem; background: rgba(255,255,255,0.1);">
+                        <span>🏠</span>
+                        <span>Back to Store</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Header -->
+            <div class="admin-header">
+                <div>
+                    <h1 style="font-size: 2rem; margin-bottom: 0.25rem;">Dashboard</h1>
+                    <p style="color: var(--text-gray);">Welcome back, Admin!</p>
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <button class="btn btn-secondary">
+                        <span>🔔</span>
+                        Notifications
+                    </button>
+                    <button class="btn btn-primary" onclick="logout()">Logout</button>
+                </div>
+            </div>
+            
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">💰</div>
+                    <div class="stat-value">$45,280</div>
+                    <div class="stat-label">Total Revenue</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">🛍️</div>
+                    <div class="stat-value">1,247</div>
+                    <div class="stat-label">Total Orders</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">📦</div>
+                    <div class="stat-value">24</div>
+                    <div class="stat-label">Products</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-value">8,432</div>
+                    <div class="stat-label">Customers</div>
+                </div>
+            </div>
+            
+            <!-- Recent Orders -->
+            <div class="content-card">
+                <div class="card-header">
+                    <h2 style="font-size: 1.5rem;">Recent Orders</h2>
+                    <a href="orders.html" class="btn btn-secondary">View All</a>
+                </div>
+                
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Date</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recentOrders">
+                        <tr>
+                            <td>#ORD-001</td>
+                            <td>John Doe</td>
+                            <td>Dec 27, 2024</td>
+                            <td>$125.00</td>
+                            <td><span class="badge-status badge-processing">Processing</span></td>
+                            <td>
+                                <button class="btn btn-primary action-btn">View</button>
+                                <button class="btn btn-secondary action-btn">Edit</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-002</td>
+                            <td>Jane Smith</td>
+                            <td>Dec 27, 2024</td>
+                            <td>$89.50</td>
+                            <td><span class="badge-status badge-pending">Pending</span></td>
+                            <td>
+                                <button class="btn btn-primary action-btn">View</button>
+                                <button class="btn btn-secondary action-btn">Edit</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-003</td>
+                            <td>Mike Johnson</td>
+                            <td>Dec 26, 2024</td>
+                            <td>$235.00</td>
+                            <td><span class="badge-status badge-completed">Completed</span></td>
+                            <td>
+                                <button class="btn btn-primary action-btn">View</button>
+                                <button class="btn btn-secondary action-btn">Edit</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Top Products -->
+            <div class="content-card">
+                <div class="card-header">
+                    <h2 style="font-size: 1.5rem;">Top Selling Products</h2>
+                    <a href="products.html" class="btn btn-secondary">Manage Products</a>
+                </div>
+                
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Stock</th>
+                            <th>Sales</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>🍎 Fresh Organic Apples</td>
+                            <td>Groceries</td>
+                            <td>$4.99</td>
+                            <td>100</td>
+                            <td>456</td>
+                            <td>
+                                <button class="btn btn-primary action-btn">Edit</button>
+                                <button class="btn btn-secondary action-btn">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>👟 Casual Sneakers</td>
+                            <td>Fashion</td>
+                            <td>$59.99</td>
+                            <td>80</td>
+                            <td>312</td>
+                            <td>
+                                <button class="btn btn-primary action-btn">Edit</button>
+                                <button class="btn btn-secondary action-btn">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>🎧 Wireless Earbuds</td>
+                            <td>Electronics</td>
+                            <td>$79.99</td>
+                            <td>120</td>
+                            <td>289</td>
+                            <td>
+                                <button class="btn btn-primary action-btn">Edit</button>
+                                <button class="btn btn-secondary action-btn">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                localStorage.removeItem('aishamart_admin');
+                window.location.href = '../index.html';
+            }
+        }
+        
+        // Load real orders from localStorage
+        function loadRecentOrders() {
+            const orders = JSON.parse(localStorage.getItem('aishamart_orders')) || [];
+            const tbody = document.getElementById('recentOrders');
+            
+            if (orders.length === 0) return;
+            
+            tbody.innerHTML = orders.slice(0, 5).map(order => `
+                <tr>
+                    <td>${order.orderId}</td>
+                    <td>${order.fullName}</td>
+                    <td>${new Date(order.orderDate).toLocaleDateString()}</td>
+                    <td>${order.total}</td>
+                    <td><span class="badge-status badge-processing">Processing</span></td>
+                    <td>
+                        <button class="btn btn-primary action-btn">View</button>
+                        <button class="btn btn-secondary action-btn">Edit</button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+        
+        loadRecentOrders();
+    </script>
+</body>
+</html>
